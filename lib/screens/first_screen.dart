@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:uoajk_day4/screens/second_screen.dart';
 
 class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+
+  final String incoming;
+
+  const FirstScreen({super.key, required this.incoming});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: Text('First Screen $incoming'),
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
       ),

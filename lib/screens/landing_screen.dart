@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:uoajk_day4/screens/first_screen.dart';
 import 'package:uoajk_day4/screens/profile_screen.dart';
 import 'package:uoajk_day4/screens/second_screen.dart';
+import 'package:uoajk_day4/screens/simple_calculator_screen.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
@@ -33,7 +34,7 @@ class _LandingScreenState extends State<LandingScreen> {
             OutlinedButton(onPressed: (){
 
               Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                return FirstScreen();
+                return FirstScreen(incoming: nameC.text,);
               }));
 
             }, child: Text('First Screen')),
@@ -62,7 +63,16 @@ class _LandingScreenState extends State<LandingScreen> {
                 hintText: 'Name',
                 border: OutlineInputBorder()
               ),
-            )
+            ),
+            
+            ElevatedButton(onPressed: (){
+
+              Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                return SimpleCalculatorScreen();
+              }));
+
+            }, child: const Text("Open Calculator"))
+
           ],
         ),
       ),
