@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:uoajk_day4/screens/second_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -13,7 +14,13 @@ class FirstScreen extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       body: Center(
-        child: Icon(Icons.shopping_cart, size: 100,),
+        child: IconButton(onPressed: (){
+
+          Navigator.of(context).push(MaterialPageRoute(builder: (context){
+            return SecondScreen();
+          }));
+
+        }, icon: Icon(Icons.shopping_cart, size: 100,)),
       ),
 
     );
